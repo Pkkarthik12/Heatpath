@@ -358,4 +358,4 @@ MIT. See [LICENSE](LICENSE).
 
 ---
 
-*"Show me where you spend your time, and I'll show you what your codebase is really made of."*
+
