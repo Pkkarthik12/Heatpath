@@ -213,7 +213,7 @@ heatpath/
 │   │   ├── events.rs     
 │   │   └── filter.rs      
 │   ├── db/
-│   │   ├── mod.rs          # SQLite connection pool (rusqlite)
+│   │   ├── mod.rs       
 │   │   ├── schema.sql      # Table definitions
 │   │   └── queries.rs      # All DB reads and writes
 │   ├── scoring/
