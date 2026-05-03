@@ -211,7 +211,7 @@ heatpath/
 │   ├── watcher/
 │   │   ├── mod.rs          
 │   │   ├── events.rs     
-│   │   └── filter.rs       # Gitignore + custom pattern filtering
+│   │   └── filter.rs      
 │   ├── db/
 │   │   ├── mod.rs          # SQLite connection pool (rusqlite)
 │   │   ├── schema.sql      # Table definitions
