@@ -215,7 +215,7 @@ heatpath/
 │   ├── db/
 │   │   ├── mod.rs       
 │   │   ├── schema.sql      
-│   │   └── queries.rs      # All DB reads and writes
+│   │   └── queries.rs      
 │   ├── scoring/
 │   │   ├── mod.rs          # Heat score computation
 │   │   ├── decay.rs        # Time-based decay logic
