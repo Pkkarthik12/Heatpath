@@ -217,8 +217,8 @@ heatpath/
 │   │   ├── schema.sql      
 │   │   └── queries.rs      
 │   ├── scoring/
-│   │   ├── mod.rs          # Heat score computation
-│   │   ├── decay.rs        # Time-based decay logic
+│   │   ├── mod.rs         
+│   │   ├── decay.rs        
 │   │   └── git.rs          # Git log parsing for commit boost
 │   ├── ui/
 │   │   ├── mod.rs          # Ratatui app loop
