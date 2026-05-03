@@ -219,10 +219,10 @@ heatpath/
 │   ├── scoring/
 │   │   ├── mod.rs         
 │   │   ├── decay.rs        
-│   │   └── git.rs          # Git log parsing for commit boost
+│   │   └── git.rs         
 │   ├── ui/
-│   │   ├── mod.rs          # Ratatui app loop
-│   │   ├── treemap.rs      # Directory tree rendering
+│   │   ├── mod.rs         
+│   │   ├── treemap.rs      
 │   │   └── colours.rs      # Heat to colour mapping
 │   └── export.rs           # JSON / CSV serialisation
 ├── tests/
