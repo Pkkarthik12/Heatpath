@@ -210,7 +210,7 @@ heatpath/
 │   ├── main.rs            
 │   ├── watcher/
 │   │   ├── mod.rs          
-│   │   ├── events.rs       # FSEvent / inotify handling via notify-rs
+│   │   ├── events.rs     
 │   │   └── filter.rs       # Gitignore + custom pattern filtering
 │   ├── db/
 │   │   ├── mod.rs          # SQLite connection pool (rusqlite)
