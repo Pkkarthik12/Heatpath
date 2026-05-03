@@ -214,7 +214,7 @@ heatpath/
 │   │   └── filter.rs      
 │   ├── db/
 │   │   ├── mod.rs       
-│   │   ├── schema.sql      # Table definitions
+│   │   ├── schema.sql      
 │   │   └── queries.rs      # All DB reads and writes
 │   ├── scoring/
 │   │   ├── mod.rs          # Heat score computation
