@@ -223,12 +223,12 @@ heatpath/
 │   ├── ui/
 │   │   ├── mod.rs         
 │   │   ├── treemap.rs      
-│   │   └── colours.rs      # Heat to colour mapping
-│   └── export.rs           # JSON / CSV serialisation
+│   │   └── colours.rs      
+│   └── export.rs          
 ├── tests/
 │   ├── watcher_test.rs
 │   ├── scoring_test.rs
-│   └── fixtures/           # Sample file trees for tests
+│   └── fixtures/          
 ├── Cargo.toml
 ├── Cargo.lock
 └── README.md
