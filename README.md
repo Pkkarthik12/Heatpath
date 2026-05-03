@@ -209,7 +209,7 @@ heatpath/
 ├── src/
 │   ├── main.rs            
 │   ├── watcher/
-│   │   ├── mod.rs          # Watcher orchestration
+│   │   ├── mod.rs          
 │   │   ├── events.rs       # FSEvent / inotify handling via notify-rs
 │   │   └── filter.rs       # Gitignore + custom pattern filtering
 │   ├── db/
