@@ -207,7 +207,7 @@ You can disable git weighting (`--no-git`) or change the decay window (`--decay-
 ```
 heatpath/
 ├── src/
-│   ├── main.rs             # CLI entrypoint (clap)
+│   ├── main.rs            
 │   ├── watcher/
 │   │   ├── mod.rs          # Watcher orchestration
 │   │   ├── events.rs       # FSEvent / inotify handling via notify-rs
