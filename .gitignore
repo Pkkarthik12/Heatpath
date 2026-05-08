@@ -1,0 +1,6 @@
+target/
+*.db
+*.db-shm
+*.db-wal
+*.stop
+heatpath-export.json
