@@ -24,7 +24,10 @@ impl IgnoreMatcher {
         let gitignore = gitignore_builder.build()?;
 
         let mut glob_builder = GlobSetBuilder::new();
-        for pattern in default_patterns().into_iter().chain(extra_patterns.iter().cloned()) {
+        for pattern in default_patterns()
+            .into_iter()
+            .chain(extra_patterns.iter().cloned())
+        {
             for expanded in expand_pattern(&pattern) {
                 glob_builder.add(Glob::new(&expanded)?);
             }

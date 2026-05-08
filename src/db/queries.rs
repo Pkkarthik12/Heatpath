@@ -105,8 +105,10 @@ impl Database {
                 params![project_id, since.to_rfc3339()],
             )?
         } else {
-            self.conn
-                .execute("DELETE FROM events WHERE project_id = ?1", params![project_id])?
+            self.conn.execute(
+                "DELETE FROM events WHERE project_id = ?1",
+                params![project_id],
+            )?
         };
         Ok(changed)
     }

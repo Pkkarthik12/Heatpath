@@ -230,8 +230,7 @@ fn draw(frame: &mut Frame, state: &mut UiState) {
     frame.render_stateful_widget(list, chunks[1], &mut list_state);
 
     let footer = if state.message.is_empty() {
-        "[s] session  [l] lifetime  [g] git-weighted  [r] reset  [e] export  [q] quit"
-            .to_string()
+        "[s] session  [l] lifetime  [g] git-weighted  [r] reset  [e] export  [q] quit".to_string()
     } else {
         state.message.clone()
     };
@@ -258,7 +257,8 @@ fn reset_session(state: &mut UiState) -> Result<()> {
     let Some(project) = db.most_recent_project()? else {
         return Ok(());
     };
-    let deleted = db.delete_events_since(project.id, Some(Utc::now() - ChronoDuration::hours(24)))?;
+    let deleted =
+        db.delete_events_since(project.id, Some(Utc::now() - ChronoDuration::hours(24)))?;
     state.message = format!("Reset {deleted} session events");
     Ok(())
 }

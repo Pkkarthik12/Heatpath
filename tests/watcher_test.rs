@@ -21,8 +21,8 @@ fn ignore_matcher_respects_defaults_gitignore_and_extra_patterns() {
 
 #[test]
 fn notify_events_map_to_heatpath_event_types() {
-    let save = Event::new(EventKind::Modify(notify::event::ModifyKind::Any))
-        .add_path("src/lib.rs".into());
+    let save =
+        Event::new(EventKind::Modify(notify::event::ModifyKind::Any)).add_path("src/lib.rs".into());
     let delete = Event::new(EventKind::Remove(notify::event::RemoveKind::File))
         .add_path("src/lib.rs".into());
 
