@@ -17,5 +17,49 @@ jobs:
           components: rustfmt, clippy
       - uses: Swatinem/rust-cache@v2
       - run: cargo fmt --all -- --check
-      - run: cargo test
-      - run: cargo clippy --all-targets -- -D warnings
+      - name: Run cargo test
+        shell: bash
+        run: |
+          set +e
+          cargo test 2>&1 | tee cargo-test.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            tail -n 80 cargo-test.log > cargo-test-tail.log
+            {
+              echo "### cargo test failed"
+              echo '```text'
+              cat cargo-test-tail.log
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+            message=$(python3 - <<'PY'
+          from pathlib import Path
+          text = Path("cargo-test-tail.log").read_text(errors="replace")
+          print(text.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A"))
+          PY
+          )
+            echo "::error title=cargo test failed::$message"
+            exit "$status"
+          fi
+      - name: Run cargo clippy
+        shell: bash
+        run: |
+          set +e
+          cargo clippy --all-targets -- -D warnings 2>&1 | tee cargo-clippy.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            tail -n 80 cargo-clippy.log > cargo-clippy-tail.log
+            {
+              echo "### cargo clippy failed"
+              echo '```text'
+              cat cargo-clippy-tail.log
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+            message=$(python3 - <<'PY'
+          from pathlib import Path
+          text = Path("cargo-clippy-tail.log").read_text(errors="replace")
+          print(text.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A"))
+          PY
+          )
+            echo "::error title=cargo clippy failed::$message"
+            exit "$status"
+          fi
